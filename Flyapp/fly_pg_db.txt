@@ -1,0 +1,17 @@
+Postgres cluster automvpdb created
+  Username:    postgres
+  Password:    hUXj28QbxBwlnBu
+  Hostname:    automvpdb.internal
+  Flycast:     fdaa:2:5504:0:1::2
+  Proxy port:  5432
+  Postgres port:  5433
+  Connection string: postgres://postgres:hUXj28QbxBwlnBu@automvpdb.flycast:5432
+
+CREATE DATABASE vehicle_clean_labeled_2;
+CREATE DATABASE
+
+pg_restore -v -d postgres://postgres:hUXj28QbxBwlnBu@localhost:5432/vehicle_clean_labeled_2 < postgresql://postgres:140494@localhost:5433/vehicle_clean_labeled_2
+
+pg_restore -v -d postgres://postgres:hUXj28QbxBwlnBu@automvpdb@localhost:5432/vehicle_clean_labeled_2 < vehicle_clean_labeled_2.tar
+
+psql -h automvpdb.internal -U postgres -d vehicle_clean_labeled_2 < C:/Users/Victor/Documents/GitHub/facebook-marketplace-scraping/vehicle_clean_labeled_2.sql
